@@ -18,8 +18,12 @@ public OnError(player_id)
 }
 public OnReg(player_id, const arg[])
 {
+    
     new name[40], pass;
     sscanf(arg, "s[40]i", name, pass);
     SendMessage(player_id, -1, name);
     SendMessage(player_id, -1, pass);
+    new query[500];
+    format(query, 500, "INSERT INTO table ('name', 'pass') VALUES ('%s', '%d')", name, pass);
+    mysql_query(connect to base, query);
 }
