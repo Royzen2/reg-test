@@ -1,0 +1,16 @@
+<input id="name" type="text" placeholder="ваш ник">
+<input id="pass" type="text" placeholder="ваш pass">
+
+
+<script>
+    let name = document.getElementById('name').value;
+    let pass = document.getElementById('pass').value;
+    if(name == "" || pass == "")
+    {
+        cef.emit('error');
+    }
+    else
+    {
+        cef.emit('data:reg', name, pass); 
+    }
+</script>
